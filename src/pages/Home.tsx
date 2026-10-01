@@ -437,7 +437,7 @@ const Home = () => {
         <Container>
           <SectionTitle
             eyebrow="Ils parlent de nous"
-            title="Ce que nos clients pensent de TENDEM"
+            title="Ce que nos clients pensent de GAMANTA"
             description="Une bonne expérience commence par un bon repas. Découvrez quelques retours de nos clients."
           />
 

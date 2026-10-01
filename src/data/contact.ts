@@ -21,7 +21,7 @@ export const contact = {
   address: "Antananarivo, Madagascar",
 
   defaultMessage:
-    "Bonjour TENDEM, je souhaite avoir des informations concernant votre restaurant.",
+    "Bonjour GAMANTA, je souhaite avoir des informations concernant votre restaurant.",
 
   openingHours: [
     { day: "Lundi", hours: "10:00 - 22:00" },
