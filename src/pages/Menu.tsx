@@ -128,7 +128,7 @@ const Menu = () => {
                 <div className="max-w-2xl">
                   <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-black/20 px-3 py-1.5 text-xs font-black uppercase tracking-wider text-white">
                     <Sparkles size={14} />
-                    Formule TENDEM
+                    Formule GAMANTA
                   </div>
 
                   <h2 className="text-3xl font-black text-white sm:text-4xl">
@@ -138,7 +138,7 @@ const Menu = () => {
                   <p className="mt-3 text-sm leading-7 text-white/85 sm:text-base">
                     GAMANTA, accompagnement et boisson réunis dans
                     une formule généreuse pour profiter pleinement
-                    de l'expérience TENDEM.
+                    de l'expérience GAMANTA.
                   </p>
                 </div>
 

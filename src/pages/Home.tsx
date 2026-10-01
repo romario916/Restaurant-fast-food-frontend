@@ -17,7 +17,7 @@ import TestimonialCard from "../components/TestimonialCard";
 import { testimonials } from "../data/testimonials";
 import PromoBanner from "../components/PromoBanner";
 import { openWhatsApp } from "../utils/whatsapp";
-
+import { tiktokVideos } from "../data/tiktokVideos";
 const Home = () => {
   return (
     <div className="bg-white">
@@ -451,6 +451,92 @@ const Home = () => {
           </div>
         </Container>
       </section>
+
+
+      {/* Vidéos clients TikTok */}
+<section className="bg-white py-20 sm:py-24 lg:py-28">
+  <Container>
+    <SectionTitle
+      eyebrow="Ils parlent de nous"
+      title="Nos clients vivent l'expérience GAMANTA"
+      description="Découvrez les moments partagés par nos clients et retrouvez leurs vidéos directement sur Facebook."
+    />
+
+    <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {tiktokVideos.map((video) => (
+        <a
+          key={video.id}
+          href={video.tiktokUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+        >
+          {/* Image */}
+          <div className="relative aspect-[9/11] overflow-hidden bg-gray-100">
+            <img
+              src={video.image}
+              alt={video.title}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
+            {/* TikTok badge */}
+            <div className="absolute left-4 top-4 rounded-full bg-black/90 px-3 py-2 text-xs font-black text-white shadow-lg backdrop-blur-sm">
+            Facebook
+            </div>
+
+            {/* Play button */}
+            <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-black shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white">
+              <svg
+                viewBox="0 0 24 24"
+                className="ml-1 h-7 w-7 fill-current"
+                aria-hidden="true"
+              >
+                <path d="M8 5.14v13.72a1 1 0 0 0 1.53.85l10.29-6.86a1 1 0 0 0 0-1.66L9.53 4.29A1 1 0 0 0 8 5.14Z" />
+              </svg>
+            </div>
+
+            {/* Texte sur l'image */}
+            <div className="absolute bottom-5 left-5 right-5">
+              <h3 className="text-xl font-black text-white">
+                {video.title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-gray-300">
+                {video.description}
+              </p>
+            </div>
+          </div>
+
+          {/* Footer carte */}
+          <div className="flex items-center justify-between px-5 py-4">
+            <span className="text-sm font-black text-black">
+              Voir la vidéo
+            </span>
+
+            <span className="text-sm font-bold text-orange-500 transition-transform duration-300 group-hover:translate-x-1">
+              Sur Facebook →
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div className="mt-10 flex justify-center">
+      <a
+        href="https://www.facebook.com/gboeana?locale=fr_FR"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-black text-white transition-all duration-300 hover:-translate-y-1 hover:bg-orange-500"
+      >
+        Découvrir GAMANTA sur Facebook
+      </a>
+    </div>
+  </Container>
+</section>
       
             {/* Promotion */}
       <PromoBanner

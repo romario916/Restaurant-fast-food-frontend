@@ -12,11 +12,11 @@ export interface SocialLinks {
 export const contact = {
   restaurantName: "GAMANTA",
 
-  whatsappNumber: "261378911098",
+  whatsappNumber: "261324160418",
 
-  phone: "+261 32 33 621 72",
+  phone: "+261 34 79 238 08",
 
-  email: "romarheny08@gmail.com",
+  email: "gamanta271@gmail.com",
 
   address: "Antananarivo, Madagascar",
 
@@ -35,10 +35,10 @@ export const contact = {
 
   socialLinks: {
     instagram: "https://instagram.com/",
-    facebook: "https://facebook.com/",
-    tiktok: "https://tiktok.com/",
+    facebook: "https://www.facebook.com/gboeana?locale=fr_FR",
+    tiktok: "https://www.tiktok.com/@gamanta123?is_from_webapp=1&sender_device=pc",
   } satisfies SocialLinks,
 
   googleMapsUrl:
-    "https://maps.app.goo.gl/QvDWdBDre9sd4FSK9",
+    "https://maps.app.goo.gl/rauH1bDr7Y7SQbeh8",
 };

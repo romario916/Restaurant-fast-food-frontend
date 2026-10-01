@@ -48,7 +48,7 @@ const About = () => {
         <Container className="relative">
           <div className="max-w-3xl">
             <span className="inline-block text-sm font-black uppercase tracking-[0.2em] text-orange-500">
-              À propos de TENDEM
+              À propos de GAMANTA
             </span>
 
             <h1 className="mt-5 text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
@@ -62,7 +62,7 @@ const About = () => {
             </h1>
 
             <p className="mt-7 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
-              TENDEM imagine une nouvelle génération de fast-food :
+              GAMANTA imagine une nouvelle génération de fast-food :
               rapide, généreuse, qualitative et pensée autour du
               plaisir de bien manger.
             </p>
@@ -79,8 +79,8 @@ const About = () => {
 
               <div className="relative overflow-hidden rounded-3xl">
                 <img
-                  src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=85"
-                  alt="Ambiance du restaurant TENDEM"
+                  src="historique.webp"
+                  alt="Ambiance du restaurant GAMANTA"
                   loading="lazy"
                   className="h-[480px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[560px]"
                 />
@@ -90,7 +90,7 @@ const About = () => {
 
               <div className="absolute -bottom-5 -right-3 rounded-2xl bg-orange-500 px-5 py-4 shadow-2xl sm:-right-5">
                 <p className="text-xs font-black uppercase tracking-widest text-black">
-                  TENDEM
+                  GAMANTA
                 </p>
 
                 <p className="mt-1 text-lg font-black text-white">
@@ -114,7 +114,7 @@ const About = () => {
 
               <div className="mt-6 space-y-5 text-base leading-8 text-gray-600">
                 <p>
-                  TENDEM est né d'une idée simple : proposer une
+                  GAMANTA est né d'une idée simple : proposer une
                   cuisine rapide qui donne réellement envie de
                   revenir.
                 </p>
@@ -128,7 +128,7 @@ const About = () => {
                 <p>
                   Que vous veniez pour un déjeuner rapide, un repas
                   entre amis ou simplement une envie de burger,
-                  TENDEM veut faire de chaque commande un moment
+                  GAMANTA veut faire de chaque commande un moment
                   généreux.
                 </p>
               </div>
@@ -164,7 +164,7 @@ const About = () => {
 
             <h2 className="mt-4 text-4xl font-black tracking-tight text-black sm:text-5xl">
               Ce qui fait
-              <span className="text-orange-500"> TENDEM.</span>
+              <span className="text-orange-500"> GAMANTA.</span>
             </h2>
 
             <p className="mt-5 text-base leading-7 text-gray-600">
@@ -205,7 +205,7 @@ const About = () => {
         <Container>
           <div className="mx-auto max-w-4xl text-center">
             <span className="text-sm font-black uppercase tracking-[0.2em] text-orange-500">
-              L'expérience TENDEM
+              L'expérience GAMANTA
             </span>
 
             <h2 className="mt-4 text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">

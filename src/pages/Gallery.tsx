@@ -29,7 +29,7 @@ const Gallery = () => {
           <div className="max-w-3xl">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-orange-400">
               <Camera size={15} />
-              L'univers TENDEM
+              L'univers GAMANTA en images
             </div>
 
             <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
@@ -42,7 +42,7 @@ const Gallery = () => {
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
               Découvrez nos recettes, notre restaurant et
-              l'ambiance qui fait l'expérience TENDEM.
+              l'ambiance qui fait l'expérience GAMANTA.
             </p>
           </div>
         </Container>
@@ -53,7 +53,7 @@ const Gallery = () => {
         <Container>
           <SectionTitle
             eyebrow="Galerie"
-            title="TENDEM en images"
+            title="GAMANTA en images"
             description="Des plats généreux, un espace convivial et une expérience pensée pour être partagée."
           />
 

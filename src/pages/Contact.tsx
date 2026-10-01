@@ -51,7 +51,7 @@ const Contact = () => {
 
             <h1 className="mt-5 text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
               Parlons
-              <span className="text-orange-500"> TENDEM.</span>
+              <span className="text-orange-500"> GAMANTA.</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
@@ -71,7 +71,7 @@ const Contact = () => {
               <SectionTitle
                 eyebrow="Nos coordonnées"
                 title="Retrouvez-nous"
-                description="Toutes les informations pour nous contacter ou venir découvrir TENDEM."
+                description="Toutes les informations pour nous contacter ou venir découvrir GAMANTA."
               />
 
               <div className="mt-8 space-y-4">
@@ -167,7 +167,7 @@ const Contact = () => {
               {/* Réseaux sociaux */}
               <div className="mt-6">
                 <p className="text-xs font-black uppercase tracking-wider text-gray-400">
-                  Suivez TENDEM
+                  Suivez GAMANTA
                 </p>
 
                 <div className="mt-3 flex gap-3">
@@ -307,67 +307,81 @@ const Contact = () => {
         </Container>
       </section>
 
+
+
       {/* Google Maps */}
-      <section className="border-t border-gray-200 bg-gray-50 py-16 sm:py-20">
-        <Container>
-          <SectionTitle
-            eyebrow="Localisation"
-            title="Venez nous voir"
-            description="Retrouvez facilement TENDEM et préparez votre itinéraire."
+      <section className="relative overflow-hidden border-t border-orange-100 bg-gradient-to-b from-orange-50/60 via-gray-50 to-white py-16 sm:py-24">
+  {/* Lueur décorative */}
+  <div className="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-orange-400/20 blur-[100px]" />
+  <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-red-400/10 blur-[100px]" />
+
+  <Container className="relative">
+    <SectionTitle
+      eyebrow="Localisation"
+      title="Venez nous voir"
+      description="Retrouvez facilement GAMANTA et préparez votre itinéraire."
+    />
+
+    <div className="mt-12">
+      <div className="group relative overflow-hidden rounded-[2rem] border border-gray-200/80 bg-white p-2 shadow-2xl shadow-orange-900/10 ring-1 ring-black/5 sm:p-3">
+        {/* Carte */}
+        <div className="relative overflow-hidden rounded-3xl">
+          <iframe
+            src="localisation.webp"
+            title="Localisation de GAMANTA"
+            className="h-[420px] w-full border-0 grayscale-[20%] transition duration-500 group-hover:grayscale-0 sm:h-[520px]"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
           />
 
-          <div className="mt-10">
-            <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl">
-              {/* Carte */}
-              <iframe
-                src={contact.googleMapsUrl}
-                title="Localisation de TENDEM"
-                className="h-[400px] w-full border-0 sm:h-[500px]"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+          {/* Dégradé léger en bas pour faire ressortir le bouton */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/25 to-transparent" />
 
-              {/* Badge professionnel */}
-              <div className="pointer-events-none absolute left-4 top-4 rounded-2xl border border-white/10 bg-black/90 px-4 py-3 text-white shadow-2xl backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-500 text-white shadow-lg">
-                    <MapPin size={18} />
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-black tracking-wide">
-                      TENDEM
-                    </p>
-
-                    <p className="text-[11px] text-gray-400">
-                      Restaurant
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-3 border-t border-white/10 pt-2">
-                  <p className="text-xs text-gray-300">
-                    Antananarivo, Madagascar
-                  </p>
-                </div>
+          {/* Badge */}
+          <div className="pointer-events-none absolute left-3 top-3 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/10 bg-neutral-950/90 px-4 py-3 text-white shadow-2xl ring-1 ring-orange-500/20 backdrop-blur-md sm:left-5 sm:top-5">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 to-red-500 text-white shadow-lg shadow-orange-500/40">
+                <MapPin size={18} />
               </div>
 
-              {/* Bouton Google Maps */}
-              <a
-                href="https://www.google.com/maps/place/TANDEM+votre+DEMENAGEUR/@-18.8239587,47.4442664,2079m/data=!3m1!1e3!4m6!3m5!1s0x21fa7f66316c7329:0x1617c1e6f4a25df2!8m2!3d-18.8221417!4d47.4446944!16s%2Fg%2F11fk3_rkjt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-xs font-black text-black shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-orange-500 hover:text-white"
-              >
-                <MapPin size={15} />
-                Ouvrir dans Google Maps
-                <ExternalLink size={14} />
-              </a>
+              <div>
+                <p className="text-sm font-black uppercase tracking-[0.15em]">
+                  GAMANTA
+                </p>
+
+                <p className="text-[11px] font-medium uppercase tracking-wider text-orange-400">
+                  Restaurant
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-3 border-t border-white/10 pt-2">
+              <p className="text-xs text-neutral-300">
+                Antananarivo, Madagascar
+              </p>
             </div>
           </div>
-        </Container>
-      </section>
+
+          {/* Bouton Google Maps */}
+          <a
+            href="https://maps.app.goo.gl/rauH1bDr7Y7SQbeh8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-xs font-bold text-white shadow-xl shadow-orange-500/30 ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-950 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 active:translate-y-0 sm:bottom-5 sm:right-5 sm:text-sm"
+          >
+            <MapPin size={15} />
+            Ouvrir dans Google Maps
+            <ExternalLink
+              size={14}
+              className="transition-transform duration-300 group-hover:translate-x-0.5"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
     </div>
   );
 };

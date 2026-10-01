@@ -157,23 +157,31 @@ const Footer = () => {
       {/* Bottom footer */}
       <Container className="flex flex-col gap-6 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-5 text-gray-500">
-          © {new Date().getFullYear()} {contact.restaurantName}.
-          Tous droits réservés.
+          Cette site a été développée par {"RAKOTOVAO Henry Romario (Devéloppeur web)"} PDG de 
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61594460594713&locale=fr_FR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-orange-500 hover:underline ml-1"
+          >
+            RoTech Web 
+          </a>
         </p>
 
         <div className="flex items-center gap-3">
           <a
-            href={contact.socialLinks.instagram}
+            href={"https://www.tiktok.com/@romario24035?is_from_webapp=1&sender_device=pc"}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-gray-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
           >
-         <span className="text-sm font-black">IG</span>
+         <span className="text-[10px] font-black">Tiktok</span>
           </a>
 
           <a
-            href={contact.socialLinks.facebook}
+            href={"https://www.facebook.com/mario.santohhr?locale=fr_FR"}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -183,10 +191,10 @@ const Footer = () => {
           </a>
 
           <a
-            href={contact.socialLinks.tiktok}
+            href={"https://maps.app.goo.gl/fbMevrdz5tvbUZjw9"}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="TikTok"
+            aria-label="Google Maps"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-gray-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
           >
             <Send size={18} />
