@@ -1,4 +1,3 @@
-
 import { contact } from "../data/contact";
 import type { MenuItem } from "../data/menu";
 
@@ -7,16 +6,27 @@ export interface CartItem {
   quantity: number;
 }
 
+export interface CustomerInfo {
+  type: "SUR PLACE" | "LIVRAISON";
+  name: string;
+  phone: string;
+  table?: string;
+  address?: string;
+}
+
 export const getWhatsAppLink = (message?: string): string => {
-  const finalMessage = message?.trim() || contact.defaultMessage;
+  const finalMessage =
+    message?.trim() || contact.defaultMessage;
 
   return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
     finalMessage,
   )}`;
 };
 
-export const getOrderMessage = (itemName: string): string => {
-  return `Bonjour TENDEM,
+export const getOrderMessage = (
+  itemName: string,
+): string => {
+  return `Bonjour GAMANTA !
 
 Je souhaite commander :
 
@@ -33,6 +43,7 @@ Merci.`;
 export const getCartOrderMessage = (
   cartItems: CartItem[],
   total: number,
+  customerInfo: CustomerInfo,
 ): string => {
   const items = cartItems
     .map(
@@ -43,20 +54,42 @@ export const getCartOrderMessage = (
     )
     .join("\n");
 
-  return `Bonjour TENDEM,
+  let customerInfoText = `Type de commande : ${customerInfo.type}
 
-Je souhaite passer la commande suivante :
+Nom : ${customerInfo.name}
+Téléphone : ${customerInfo.phone}`;
+
+  if (
+    customerInfo.type === "SUR PLACE" &&
+    customerInfo.table?.trim()
+  ) {
+    customerInfoText += `\nTable : ${customerInfo.table}`;
+  }
+
+  if (
+    customerInfo.type === "LIVRAISON" &&
+    customerInfo.address?.trim()
+  ) {
+    customerInfoText += `\nAdresse de livraison : ${customerInfo.address}`;
+  }
+
+  return `Bonjour GAMANTA !
+
+NOUVELLE COMMANDE
+
+${customerInfoText}
+
+------------------------------
+
+COMMANDE
 
 ${items}
 
-------------------------------
+───────────────────
 TOTAL : ${total.toLocaleString("fr-FR")} Ar
-------------------------------
+───────────────────
 
-Restaurant :
-${contact.address}
-
-Merci de confirmer ma commande et de m'indiquer les informations nécessaires.`;
+Merci de confirmer la commande.`;
 };
 
 export const getContactFormMessage = (
@@ -64,7 +97,7 @@ export const getContactFormMessage = (
   phone: string,
   message: string,
 ): string => {
-  return `Bonjour TENDEM,
+  return `Bonjour GAMANTA !
 
 Je vous contacte depuis votre site internet.
 
@@ -80,11 +113,14 @@ ${contact.address}
 Merci de votre retour.`;
 };
 
-export const openWhatsApp = (message?: string): void => {
+export const openWhatsApp = (
+  message?: string,
+): void => {
+  const url = getWhatsAppLink(message);
+
   window.open(
-    getWhatsAppLink(message),
+    url,
     "_blank",
     "noopener,noreferrer",
   );
 };
-

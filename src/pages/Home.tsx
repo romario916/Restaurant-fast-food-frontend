@@ -353,85 +353,120 @@ const Home = () => {
       </section>
 
             {/* Galerie */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <Container>
-          <SectionTitle
-            eyebrow="L'univers TENDEM"
-            title="Ça se mange aussi avec les yeux."
-            description="Découvrez nos plats, notre ambiance et les moments qui font l'expérience TENDEM."
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-orange-50/40 to-white py-24 sm:py-28 lg:py-32">
+  {/* Lueurs décoratives */}
+  <div className="pointer-events-none absolute -left-32 top-24 h-80 w-80 rounded-full bg-orange-400/10 blur-[110px]" />
+  <div className="pointer-events-none absolute -right-32 bottom-24 h-80 w-80 rounded-full bg-red-400/10 blur-[110px]" />
+
+  <Container className="relative">
+    <SectionTitle
+      eyebrow="L'univers GAMANTA"
+      title="Ça se mange aussi avec les yeux."
+      description="Découvrez nos plats, notre ambiance et les moments qui rendent chaque visite chez GAMANTA unique."
+    />
+
+    <div className="mt-14 grid gap-4 sm:gap-5 md:grid-cols-12 md:grid-rows-2">
+      {/* Grande image */}
+      {galleryItems[0] && (
+        <div className="group relative isolate overflow-hidden rounded-[2rem] bg-neutral-900 shadow-2xl shadow-black/15 ring-1 ring-black/5 md:col-span-7 md:row-span-2">
+          <img
+            src={galleryItems[0].image}
+            alt={galleryItems[0].title}
+            loading="lazy"
+            className="h-[460px] w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 md:h-full md:min-h-[620px]"
           />
 
-          <div className="grid gap-4 md:grid-cols-12 md:grid-rows-2">
-            {/* Grande image */}
-            {galleryItems[0] && (
-              <div className="group relative overflow-hidden rounded-3xl md:col-span-7 md:row-span-2">
-                <img
-                  src={galleryItems[0].image}
-                  alt={galleryItems[0].title}
-                  loading="lazy"
-                  className="h-[420px] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-full md:min-h-[620px]"
-                />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
+          {/* Contenu */}
+          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+              {galleryItems[0].category}
+            </span>
 
-                <div className="absolute bottom-6 left-6">
-                  <span className="rounded-full bg-orange-500 px-3 py-1.5 text-xs font-black uppercase tracking-wider text-white">
-                    {galleryItems[0].category}
-                  </span>
+            <h3 className="mt-5 text-balance text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-lg sm:text-4xl">
+              {galleryItems[0].title}
+            </h3>
 
-                  <h3 className="mt-3 text-2xl font-black text-white">
-                    Le goût au premier regard.
-                  </h3>
-                </div>
-              </div>
-            )}
-
-            {/* Image 2 */}
-            {galleryItems[1] && (
-              <div className="group relative overflow-hidden rounded-3xl md:col-span-5">
-                <img
-                  src={galleryItems[1].image}
-                  alt={galleryItems[1].title}
-                  loading="lazy"
-                  className="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-
-                <div className="absolute inset-0 bg-black/0 transition group-hover:bg-black/20" />
-              </div>
-            )}
-
-            {/* Image 3 */}
-            {galleryItems[2] && (
-              <div className="group relative overflow-hidden rounded-3xl md:col-span-5">
-                <img
-                  src={galleryItems[2].image}
-                  alt={galleryItems[2].title}
-                  loading="lazy"
-                  className="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-500/30 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-              </div>
-            )}
+            <div className="mt-5 h-px w-12 bg-gradient-to-r from-orange-400 to-transparent transition-all duration-500 group-hover:w-28" />
           </div>
+        </div>
+      )}
 
-          {/* Bouton */}
-          <div className="mt-8 flex justify-center">
-            <Link
-              to="/galerie"
-              className="group inline-flex items-center gap-2 rounded-full border-2 border-black px-6 py-3 text-sm font-black text-black transition-all duration-300 hover:-translate-y-1 hover:bg-black hover:text-white"
-            >
-              Voir toute la galerie
+      {/* Image 2 */}
+      {galleryItems[1] && (
+        <div className="group relative isolate overflow-hidden rounded-[2rem] bg-neutral-900 shadow-xl shadow-black/10 ring-1 ring-black/5 md:col-span-5">
+          <img
+            src={galleryItems[1].image}
+            alt={galleryItems[1].title}
+            loading="lazy"
+            className="h-72 w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 md:h-full"
+          />
 
-              <ArrowRight
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100" />
+          <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
+
+          <div className="absolute inset-x-0 bottom-0 p-6 transition-all duration-500 md:translate-y-3 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400">
+              {galleryItems[1].category}
+            </span>
+
+            <h3 className="mt-1.5 text-xl font-bold tracking-tight text-white">
+              {galleryItems[1].title}
+            </h3>
           </div>
-        </Container>
-      </section>
+        </div>
+      )}
 
+      {/* Image 3 */}
+      {galleryItems[2] && (
+        <div className="group relative isolate overflow-hidden rounded-[2rem] bg-neutral-900 shadow-xl shadow-black/10 ring-1 ring-black/5 md:col-span-5">
+          <img
+            src={galleryItems[2].image}
+            alt={galleryItems[2].title}
+            loading="lazy"
+            className="h-72 w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 md:h-full"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100" />
+          <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
+
+          <div className="absolute inset-x-0 bottom-0 p-6 transition-all duration-500 md:translate-y-3 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400">
+              {galleryItems[2].category}
+            </span>
+
+            <h3 className="mt-1.5 text-xl font-bold tracking-tight text-white">
+              {galleryItems[2].title}
+            </h3>
+          </div>
+        </div>
+      )}
+    </div>
+
+    {/* Bouton */}
+    <div className="mt-12 flex justify-center">
+      <Link
+        to="/galerie"
+        className="group inline-flex items-center gap-3 rounded-full bg-neutral-950 py-3 pl-8 pr-3 text-sm font-semibold text-white shadow-xl shadow-black/20 ring-1 ring-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-500 hover:shadow-2xl hover:shadow-orange-500/30 hover:ring-orange-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2"
+      >
+        Voir toute la galerie
+
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors duration-300 group-hover:bg-white/20">
+          <ArrowRight
+            size={17}
+            className="transition-transform duration-300 group-hover:translate-x-0.5"
+          />
+        </span>
+      </Link>
+    </div>
+  </Container>
+</section>
+
+      
             {/* Témoignages */}
       <section className="bg-gray-50 py-20 sm:py-24 lg:py-28">
         <Container>

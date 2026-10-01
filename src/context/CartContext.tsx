@@ -47,7 +47,7 @@ interface CartContextValue {
   totalPrice: number;
 }
 
-const STORAGE_KEY = "tendem_cart";
+const STORAGE_KEY = "gamanta_cart";
 
 const initialState: CartState = {
   items: [],
@@ -64,13 +64,24 @@ const loadCart = (): CartState => {
     const parsedCart: CartItem[] = JSON.parse(savedCart);
 
     if (!Array.isArray(parsedCart)) {
+      localStorage.removeItem(STORAGE_KEY);
       return initialState;
     }
 
+    const validItems = parsedCart.filter(
+      (cartItem) =>
+        cartItem &&
+        cartItem.item &&
+        typeof cartItem.item.id === "number" &&
+        typeof cartItem.quantity === "number" &&
+        cartItem.quantity > 0,
+    );
+
     return {
-      items: parsedCart,
+      items: validItems,
     };
   } catch {
+    localStorage.removeItem(STORAGE_KEY);
     return initialState;
   }
 };
@@ -120,7 +131,8 @@ const cartReducer = (
       if (action.payload.quantity <= 0) {
         return {
           items: state.items.filter(
-            (cartItem) => cartItem.item.id !== action.payload.itemId,
+            (cartItem) =>
+              cartItem.item.id !== action.payload.itemId,
           ),
         };
       }
@@ -137,7 +149,9 @@ const cartReducer = (
       };
 
     case "CLEAR_CART":
-      return initialState;
+      return {
+        items: [],
+      };
 
     default:
       return state;
@@ -163,10 +177,14 @@ export const CartProvider = ({
 
   useEffect(() => {
     try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(state.items),
-      );
+      if (state.items.length === 0) {
+        localStorage.removeItem(STORAGE_KEY);
+      } else {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(state.items),
+        );
+      }
     } catch {
       // localStorage peut être indisponible dans certains navigateurs.
     }
@@ -203,6 +221,12 @@ export const CartProvider = ({
     dispatch({
       type: "CLEAR_CART",
     });
+
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // localStorage peut être indisponible dans certains navigateurs.
+    }
   };
 
   const totalItems = state.items.reduce(

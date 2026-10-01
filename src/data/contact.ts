@@ -12,16 +12,16 @@ export interface SocialLinks {
 export const contact = {
   restaurantName: "GAMANTA",
 
-  whatsappNumber: "261324160418",
+  whatsappNumber: "261378911098",
 
-  phone: "+261 34 79 238 08",
+  phone: "+261 37 89 110 98",
 
   email: "gamanta271@gmail.com",
 
   address: "Antananarivo, Madagascar",
 
   defaultMessage:
-    "Bonjour GAMANTA, je souhaite avoir des informations concernant votre restaurant.",
+    "Bonjour GAMANTA, je souhaite avoir des informations concernant du  votre restaurant.",
 
   openingHours: [
     { day: "Lundi", hours: "10:00 - 22:00" },
